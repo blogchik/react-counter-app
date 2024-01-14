@@ -36,8 +36,6 @@ function App() {
     Cookies.set('count', 0);
   };
 
-  <SpeedInsights/>
-
   return (
     <div className="App">
       
@@ -51,6 +49,8 @@ function App() {
           <span onClick={onPlus} className={'btn plus'}><i class="fi fi-rr-plus-small"></i></span>
         </div>
       </div>
+
+      <SpeedInsights/>
 
     </div>
   );
