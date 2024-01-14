@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import './App.css';
 import Cookies from 'js-cookie';
-import { SpeedInsights } from "@vercel/speed-insights/next"
 
 function App() {
 
@@ -49,8 +48,6 @@ function App() {
           <span onClick={onPlus} className={'btn plus'}><i class="fi fi-rr-plus-small"></i></span>
         </div>
       </div>
-
-      <SpeedInsights/>
 
     </div>
   );
