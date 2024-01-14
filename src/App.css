@@ -1,38 +1,131 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+body
+{
+  padding: 0;
+  margin: 0;
+  user-select: none;
+  font-family: 'Roboto', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.App
+{
   display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 40px;
+  gap: 24px;
+  background-color: #f7f7f7;
+  color: #0d0d0d;
+}
+
+.App h1
+{
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  color: #FF006E;
+}
+
+.counter
+{
+  display: flex;
+  position: relative;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 20px;
+  background-color: #fff;
+  width: 300px;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0px 8px 20px 1px #0d0d0d1d;
 }
 
-.App-link {
-  color: #61dafb;
+.counter .count
+{
+  font-size: 42px;
+  font-weight: 500;
+  font-style: normal;
+  color: #0d0d0d;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.counter .btns
+{
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  width: 100%;
+}
+
+.counter .btns .btn
+{
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 14px;
+  background-color: #0d0d0d;
+  border-radius: 12px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 500;
+  outline: none;
+}
+
+.counter .btns .btn i
+{
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.counter .btns .btn.minus
+{
+  background-color: #9ef01a;
+}
+
+.counter .btns .btn.plus
+{
+  background-color: #3A86FF;
+}
+
+.counter .btns .btn.minus:hover, .counter .btns .btn.minus:focus, .counter .btns .btn.minus:active
+{
+  background-color: #aef63a;
+}
+
+.counter .btns .btn.plus:hover, .counter .btns .btn.plus:focus, .counter .btns .btn.plus:active
+{
+  background-color: #5b97f8;
+}
+
+.counter .btns .reset
+{
+  font-size: 18px;
+  font-weight: 400;
+  font-style: normal;
+  color: #0d0d0d;
+  cursor: pointer;
 }

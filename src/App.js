@@ -1,25 +1,57 @@
-import logo from './logo.svg';
+import React, { useEffect } from 'react';
 import './App.css';
+import Cookies from 'js-cookie';
 
 function App() {
+
+  const [count, setCount] = React.useState(0);
+
+  useEffect(() => {
+
+    const savedCount = Cookies.get('count');
+
+    if (savedCount !== undefined) {
+      setCount(parseInt(savedCount, 10));
+    }
+  }, []);
+
+  const onPlus = () => {
+    const newCount = count + 1;
+    setCount(newCount);
+
+    Cookies.set('count', newCount);
+  };
+
+  const onMinus = () => {
+    const newCount = count - 1;
+    setCount(newCount);
+
+    Cookies.set('count', newCount);
+  };
+
+  const onReset = () => {
+    setCount(0);
+
+    Cookies.set('count', 0);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      
+      <h1>React Counter App</h1>
+
+      <div className={'counter'}>
+        <p className={'count'}>{count}</p>
+        <div className={'btns'}>
+          <span onClick={onMinus} className={'btn minus'}><i class="fi fi-rr-minus-small"></i></span>
+          <span onClick={onReset} className='reset'>Reset</span>
+          <span onClick={onPlus} className={'btn plus'}><i class="fi fi-rr-plus-small"></i></span>
+        </div>
+      </div>
+
     </div>
   );
+
 }
 
 export default App;
