@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import './App.css';
 import Cookies from 'js-cookie';
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 function App() {
 
@@ -34,6 +35,8 @@ function App() {
 
     Cookies.set('count', 0);
   };
+
+  <SpeedInsights/>
 
   return (
     <div className="App">
